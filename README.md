@@ -25,6 +25,3 @@ In this home automation project, I implemented automation using both IR-based an
 
 By combining these components, I created a comprehensive home automation system that enhances both convenience and energy efficiency.
 
---- 
-
-This version is more structured, with clear bullet points to enhance readability and focus on key elements.
