@@ -35,33 +35,27 @@ void setup() {
   digitalWrite(4,LOW);
   digitalWrite(5,LOW);
 // sei();
-  
 
-//TIMER 1
-//  Timer1.initialize(freqStep);    // Initialize TimerOne library for the freq we need
-//  Timer1.attachInterrupt(FAN_1_CHECK, freqStep);  
-
-
-////TIMER 0 
-//  TCCR0A = 0;           
-//  TCCR0B = 0;            
-//  TCNT0  = 0;            
-//  OCR0A = ;           
-//  TCCR0B |= (1 << WGM01); 
-//  TCCR0B |= (1 << CS02) | (1 << CS01);
-//  TIMSK0 |= (1 << OCIE0A);
+//TIMER 0 
+ TCCR0A = 0;           
+ TCCR0B = 0;            
+ TCNT0  = 0;            
+ OCR0A = ;           
+ TCCR0B |= (1 << WGM01); 
+ TCCR0B |= (1 << CS02) | (1 << CS01);
+ TIMSK0 |= (1 << OCIE0A);
 
 
-////TIMER 2
-//  TCCR2A = 0;            // set entire TCCR2A register to 0
-//  TCCR2B = 0;            // same for TCCR2B
-//  TCNT2  = 0;            // initialize counter value to 0//  OCR2A = 75;           // set compare match register for 75 HZ
-//  TCCR2B |= (1 << WGM21); // turn on CTC mode
-//  TCCR2B |= (1 << CS22) | (1 << CS21);//set prescaler to 256
-//  TIMSK2 |= (1 << OCIE2A);
+//TIMER 2
+ TCCR2A = 0;            // set entire TCCR2A register to 0
+ TCCR2B = 0;            // same for TCCR2B
+ TCNT2  = 0;            // initialize counter value to 0//  OCR2A = 75;           // set compare match register for 75 HZ
+ TCCR2B |= (1 << WGM21); // turn on CTC mode
+ TCCR2B |= (1 << CS22) | (1 << CS21);//set prescaler to 256
+ TIMSK2 |= (1 << OCIE2A);
 
-//  Timer3.initialize(400);
-//  Timer3.attachInterrupt(FAN_3_CHECK, 400);
+ Timer3.initialize(400);
+ Timer3.attachInterrupt(FAN_3_CHECK, 400);
 
 //TIMER 4
 TCCR4A = 0;           
@@ -70,7 +64,7 @@ TCNT4  = 0;
 OCR4A = 8000 ;         //  (F_CPU / 64) * interruptInterval / 1000000  = = 18.75;   and for 256 it will 4.68,    and for pre 1 that will be 1200.
 TCCR4A |= (1 << WGM41); 
 TCCR4B |= (1 << CS40);// priscale is  
-//TCCR4B |= (1 << CS41) | (1 << CS40); // 64 priscale
+TCCR4B |= (1 << CS41) | (1 << CS40); // 64 priscale
 TIMSK4 |= (1 << OCIE4A);
 
 
@@ -111,7 +105,7 @@ void zero_cross_detect()
   digitalWrite(AC_pin_2, LOW);
 }                                 
 // Turn on the TRIAC at the appropriate time
-/*
+
 void FAN_1_CHECK() 
 {                   
   if(zero_cross == true) 
@@ -179,23 +173,16 @@ void dim_check_2()
 
 void translateIR() // takes action based on IR code received
 {
-
-//  switch(results.value)
-//  {
-//  case 16753245:  
-//    {   
+  
     if (results.value == 16753245) 
     {
       digitalWrite(4, HIGH);
-//delay(100);
-//digitalWrite(4, LOW);
+
       dim= dim - 5; // in vechiul sketch era 127
  
        if(dim<=6)
     {
      digitalWrite(4, LOW);
-//delay(100);
-//digitalWrite(4, LOW);
       dim =23;
     }
     }
