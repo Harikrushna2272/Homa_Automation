@@ -1,15 +1,15 @@
 #include <IRremote.h>
 #include <RBDdimmer.h>
-// #include <Wire.h>
-// #include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 #include <MQ135.h>
-// #include<LiquidCrystal.h>
-// LiquidCrystal lcd(14,15,16,17,18,19);
-// LiquidCrystal_I2C lcd2(0x26, 16, 2);
-// MQ135 gasSensor(A0);
-// const int IR_PIN = 52;
-// const int ANALOG_PIN = A1;
-// const float K = 0.55;
+#include<LiquidCrystal.h>
+LiquidCrystal lcd(14,15,16,17,18,19);
+LiquidCrystal_I2C lcd2(0x26, 16, 2);
+MQ135 gasSensor(A0);
+const int IR_PIN = 52;
+const int ANALOG_PIN = A1;
+const float K = 0.55;
 #define RECV_PIN 3
 #define IN1 24
 #define IN2 25
@@ -276,7 +276,7 @@ if(irrecv.decode(&results)){
           }   
         }
 
-/*
+
 if(results.value == code_4)
 {
   if(outVal <= 72)
@@ -417,16 +417,11 @@ if (results.value == code_1_up)
            
 irrecv.resume();     
 }
-/*
+
 float co2 = gasSensor.getPPM(); 
 lcd.setCursor(0, 0); 
 lcd.print("CO2 GAS: "); 
 lcd.print(co2); 
-// lcd.print("PPM");
-// Serial.println("CO2 GAS: "); 
-// Serial.print(co2); 
-// Serial.print("PPM");
-
 
 digitalWrite(IR_PIN, LOW);
 delayMicroseconds(320);
