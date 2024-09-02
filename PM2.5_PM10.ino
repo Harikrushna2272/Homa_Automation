@@ -18,11 +18,6 @@ void setup() {
   pinMode(IR_PIN, OUTPUT);
   // initialize the IR LED pin to be off
   digitalWrite(IR_PIN, HIGH);
-  // lcd2.init(); // initialize LCD
-  // lcd2.backlight();
-  // lcd2.setCursor(0,0);
-  // Serial.println("ok");
-  // lcd2.print("Smoke Sensor");
   // initialize the serial port
   
 }
@@ -42,8 +37,6 @@ void loop() {
   // calculate the dust concentration in ug/m3
   float concentration = K * (voltage - 0.1);
   
-  // map the dust concentration to a PM2.5 concentration in ug/m3
-//  float pm25 = map(concentration, PM25_MIN, PM25_MAX, 0, 500);
   float pm25 = concentration * 0.5;
   float pm10 = concentration * (1/0.5);
  
