@@ -16,7 +16,7 @@ In this home automation project, I implemented automation using both IR-based an
 
 3. **Air Quality Monitoring**:
    - Integrated an MQ-8 gas sensor for measuring CO₂ levels and the Air Quality Index (AQI).
-   - Used the GP2Y1010AU0F Dust Smoke Particle Sensor to measure PM2.5 (particulate matter with a diameter of 2.5 µm or smaller).
+   - Used the GP2Y1010AU0F Dust Smoke Particle Sensor to measure PM2.5 (particulate matter with a diameter of 2.5 µm or smaller) and also PM10.
    - Displayed the measurements using an I2C communication protocol.
 
 4. **Microcontrollers and IoT Integration**:
