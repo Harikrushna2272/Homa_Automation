@@ -513,34 +513,4 @@ if (preVal != outVal) {
        dimmer6.setPower(outVal6);
       } 
            
-// irrecv.resume();     
-/*
-float co2 = gasSensor.getPPM(); 
-// lcd.setCursor(0, 0); 
-// lcd.print("CO2 GAS: "); 
-// lcd.print(co2); 
-Serial.println(" CO2 GAS: "); 
-Serial.print(co2); 
-Serial.print("PPM");
-
-
-digitalWrite(IR_PIN, LOW);
-delayMicroseconds(320);
-int analogValue = analogRead(ANALOG_PIN);
-digitalWrite(IR_PIN, HIGH);
-float voltage = analogValue * 5.0 / 1024.0;
-float concentration = K * (voltage - 0.1);
-float pm25 = concentration * 0.5;
-float pm10 = concentration * (1/0.5);
-lcd2.setCursor(0,0);
-lcd2.print("PM2.5: ");
-lcd2.print(pm25);
-lcd2.print(" ug/m3");
-lcd2.setCursor(0,1);
-lcd2.print("PM10: ");
-lcd2.print(pm10);
-lcd2.print(" ug/m3");
-*/
-// delay(200);
-
 }
