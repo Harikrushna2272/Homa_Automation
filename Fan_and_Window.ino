@@ -1,7 +1,6 @@
 #include <RBDdimmer.h>
 #include <MQ135.h>
 
-// MQ135 gasSensor(A0); // Initialize the MQ135 sensor
 #define ana_a4 A4 //(window 1/ limit 2)
 #define ana_a5 A5 //(window 1/ limit 1)
 #define ana_a6 A6 //(window 2/ limit 2)
@@ -219,27 +218,8 @@ if( k <= 800  )
 digitalWrite(motor_p3, LOW);
 digitalWrite(motor_n3, LOW);
 }
-/*
-if( l <= 800  )
-{
-  for( int anna7 = 400 ; anna7 < 600 ; anna7++) {
-    digitalWrite(motor_p4, LOW);    
-    digitalWrite(motor_n4, HIGH);
-  }
-digitalWrite(motor_p4, LOW);
-digitalWrite(motor_n4, LOW);
- }
-if( m <= 800  )
-{
-  for(int anna8 = 400 ; anna8 < 600 ; anna8++) {
-    digitalWrite(motor_p4, HIGH);    
-    digitalWrite(motor_n4, LOW);
-     }
-digitalWrite(motor_p4, LOW);
-digitalWrite(motor_n4, LOW);
-}
-*/
-    if (a == 1 && b == 1 && c == 0 && d == 1 && e == 1) 
+
+if (a == 1 && b == 1 && c == 0 && d == 1 && e == 1) 
        {
           if( window1 == 0)
       {
@@ -296,24 +276,6 @@ digitalWrite(motor_n4, LOW);
        }
       }
       }
-     
-    // if (a == 1 && b == 1 && c == 1 && d == 0 && e == 0)
-    //    {
-    //    digitalWrite(motor_p3, HIGH);    
-    //    digitalWrite(motor_n3, LOW); 
-    //    digitalWrite(motor_p4, HIGH);    
-    //    digitalWrite(motor_n4, LOW);
-    //    Serial.println("curtain 3,4 opening");   
-    //    }
-    // if (a == 1 && b == 1 && c == 1 && d == 0 && e == 1) 
-    //    {
-    //    digitalWrite(motor_p3, LOW);    
-    //    digitalWrite(motor_n3, HIGH);
-    //    digitalWrite(motor_p4, LOW);    
-    //    digitalWrite(motor_n4, HIGH);
-    //    Serial.println("curtain 3,4 closing");
-    //    }
-
 
 preVal = outVal;
 preVal2 = outVal2;
