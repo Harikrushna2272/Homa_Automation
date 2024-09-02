@@ -1,14 +1,9 @@
-// #include <IRremote.h>
 #include <RBDdimmer.h>
 
 #define outputPin 12
 #define outputPin2 11
 #define outputPin3 10
 #define zerocross 2
-// int RECV_PIN = 3;
-
-// IRrecv irrecv(RECV_PIN);
-// decode_results results;
 
 dimmerLamp dimmer(outputPin);
 dimmerLamp dimmer2(outputPin2);
@@ -42,7 +37,7 @@ void loop() {
   preVal = outVal;
   preVal2 = outVal2;
   preVal3 = outVal3;
-/*  if (irrecv.decode(&results)) {
+if (irrecv.decode(&results)) {
       unsigned long irCode = results.value;
       Serial.println();
 
@@ -103,6 +98,5 @@ if(results.value == 16769565)
       
 //    delay(50);    
     irrecv.resume(); // Receive the next IR code
-*/
-    }
+}
   
